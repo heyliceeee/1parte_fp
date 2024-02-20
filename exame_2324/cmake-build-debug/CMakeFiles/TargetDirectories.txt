@@ -1,0 +1,3 @@
+D:/githubProjects/1parte_fp/exame_2324/cmake-build-debug/CMakeFiles/exame_2324.dir
+D:/githubProjects/1parte_fp/exame_2324/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/githubProjects/1parte_fp/exame_2324/cmake-build-debug/CMakeFiles/rebuild_cache.dir
