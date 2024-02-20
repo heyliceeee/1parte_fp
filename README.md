@@ -6,9 +6,9 @@
 -  apontadores
 
 ### Exames
-Exame | URL
---- | --- |
-2023/2024 | www.google.pt 
-Modelo1 | www.google.pt 
-2019/2020 | www.google.pt 
-2019/2020 Exercícios | www.google.pt 
+Exame |
+--- |
+[2023/2024](https://github.com/heyliceeee/1parte_fp/tree/main/exame_2324)
+Modelo1 |  
+2019/2020 | 
+2019/2020 Exercícios | 
