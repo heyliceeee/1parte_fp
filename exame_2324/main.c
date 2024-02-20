@@ -1,4 +1,6 @@
 #include <stdio.h>
+#define LINHAS 5
+#define COLUNAS 5
 
 /**
  * conta os espacos em branco presentes no array char
@@ -63,14 +65,41 @@ int ordenado(int *array, int tam)
 }
 
 
+/**
+ * soma elementos da diagonal e acima da mesma
+ * @param matrix
+ * @return soma todos os elementos localizados na diagonal e acima da mesma
+ */
+int somaMatrizDiagonalSuperior(int matrix[LINHAS][COLUNAS])
+{
+    int soma=0;
+
+    for(int i=0; i < LINHAS; i++) //percorrer linhas
+    {
+        for(int j=i; j < COLUNAS; j++) //percorrer colunas
+        {
+            soma += matrix[i][j];
+        }
+    }
+
+    return soma;
+}
+
+
 int main() {
     int array[] = {2, 3, 1, 6, 4};
+    int matrix[5][5] = {10, -5, 1, 100, 0,
+                        300, 12, -53, 2, 13,
+                        -25, -8, 16, 45, 123,
+                        13, 67, -3, -98, 9,
+                        29, 1, 90, 78, 4};
 
     printf("START\n\n");
 
     printf("soma dos espacos em branco: %d \n", contaEspacosEmBranco("hello world"));
     printf("ultima posicao de l (0 - nao existe): %d \n", devolveUltimaPosicao("hello world", 'h'));
     printf("array esta ordenado? %d \n", ordenado(array, 5));
+    printf("soma dos elementos da diagonal e acima da mesma: %d \n", somaMatrizDiagonalSuperior(matrix));
 
     printf("\nEND\n\n");
     return 0;
