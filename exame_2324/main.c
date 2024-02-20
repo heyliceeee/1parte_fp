@@ -143,7 +143,7 @@ int main() {
                         29, 1, 90, 78, 4};
     char palavra[] = "fundamentos";
 
-    
+
     printf("START\n\n");
 
 
