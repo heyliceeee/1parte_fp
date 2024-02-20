@@ -1,0 +1,3 @@
+D:/githubProjects/1parte_fp/exame_modelo1/cmake-build-debug/CMakeFiles/exame_modelo1.dir
+D:/githubProjects/1parte_fp/exame_modelo1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/githubProjects/1parte_fp/exame_modelo1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
