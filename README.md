@@ -1,2 +1,14 @@
-# 1parte_fp
-Praticar os conteúdos da parte 1 do exame de Fundamentos de Programação
+# 1 Parte do Exame de Fundamentos de Programação
+### Conteúdo:
+- ciclos
+- arrays
+-  matrizes
+-  apontadores
+
+### Exames
+Exame | URL
+--- | --- |
+2023/2024 | www.google.pt 
+Modelo1 | www.google.pt 
+2019/2020 | www.google.pt 
+2019/2020 Exercícios | www.google.pt 
