@@ -86,6 +86,30 @@ int somaMatrizDiagonalSuperior(int matrix[LINHAS][COLUNAS])
 }
 
 
+/**
+ * devolve total elementos pares da matriz
+ * @param matrix
+ * @return total elementos pares
+ */
+int totalParesMatriz(int matrix[LINHAS][COLUNAS])
+{
+    int soma=0;
+
+    for(int i=0; i < LINHAS; i++) //percorrer linhas
+    {
+        for(int j=i; j < COLUNAS; j++) //percorrer colunas
+        {
+            if(matrix[i][j] % 2 == 0) //elemento par
+            {
+                soma++;
+            }
+        }
+    }
+
+    return soma;
+}
+
+
 int main() {
     int array[] = {2, 3, 1, 6, 4};
     int matrix[5][5] = {10, -5, 1, 100, 0,
@@ -100,6 +124,7 @@ int main() {
     printf("ultima posicao de l (0 - nao existe): %d \n", devolveUltimaPosicao("hello world", 'h'));
     printf("array esta ordenado? %d \n", ordenado(array, 5));
     printf("soma dos elementos da diagonal e acima da mesma: %d \n", somaMatrizDiagonalSuperior(matrix));
+    printf("total elementos pares: %d \n", totalParesMatriz(matrix));
 
     printf("\nEND\n\n");
     return 0;
