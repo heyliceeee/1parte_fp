@@ -110,6 +110,30 @@ int totalParesMatriz(int matrix[LINHAS][COLUNAS])
 }
 
 
+/**
+ * inverter palavra
+ * @param s
+ */
+void invertePalavra(char *s)
+{
+    int tam=0;
+
+    for(int i=0; s[i] != '\0'; i++) //percorrer o array
+    {
+        tam++;
+    }
+
+    for(int i=0; i < tam/2; i++)
+    {
+        char temp = s[i]; //temp = letra atual
+
+        s[i] = s[tam - i - 1]; //letra atual = ultimo slot vazio
+        s[tam - i - 1] = temp; //ultimo slot vazio = temp (letra atual)
+    }
+}
+
+
+
 int main() {
     int array[] = {2, 3, 1, 6, 4};
     int matrix[5][5] = {10, -5, 1, 100, 0,
@@ -117,8 +141,11 @@ int main() {
                         -25, -8, 16, 45, 123,
                         13, 67, -3, -98, 9,
                         29, 1, 90, 78, 4};
+    char palavra[] = "fundamentos";
 
+    
     printf("START\n\n");
+
 
     printf("soma dos espacos em branco: %d \n", contaEspacosEmBranco("hello world"));
     printf("ultima posicao de l (0 - nao existe): %d \n", devolveUltimaPosicao("hello world", 'h'));
@@ -126,6 +153,10 @@ int main() {
     printf("soma dos elementos da diagonal e acima da mesma: %d \n", somaMatrizDiagonalSuperior(matrix));
     printf("total elementos pares: %d \n", totalParesMatriz(matrix));
 
-    printf("\nEND\n\n");
+    invertePalavra(palavra);
+    printf("Palavra invertida: %s\n", palavra);
+
+
+    printf("\n\nEND\n\n");
     return 0;
 }
