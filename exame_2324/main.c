@@ -7,17 +7,17 @@
  */
 int contaEspacosEmBranco(char *s)
 {
-    int sum=0;
+    int soma=0;
 
     for(int i=0; s[i] != '\0'; i++) //percorrer o array
     {
         if(s[i] == ' ') //encontrou espaco em branco
         {
-            sum++; //conta
+            soma++; //conta
         }
     }
 
-    return sum;
+    return soma;
 }
 
 
@@ -29,27 +29,48 @@ int contaEspacosEmBranco(char *s)
  */
 int devolveUltimaPosicao(char *s, char c)
 {
-    int lastPos=0;
+    int ultimaPos=0;
 
     for(int i=0; s[i] != '\0'; i++) //percorrer o array
     {
         if(s[i] == c) //encontrou letra
         {
-            lastPos = i+1; //guarda a posicao
+            ultimaPos = i+1; //guarda a posicao
         }
     }
 
-    return lastPos;
+    return ultimaPos;
 }
 
 
+/**
+ * devolve 0/1 consoante o array de inteiros tiver ordenado
+ * @param array de inteiros
+ * @param tam tamanho do array
+ * @return 1 caso o array esteja ordenado por ordem crescente, caso contrario 0
+ */
+int ordenado(int *array, int tam)
+{
+    for(int i=0; i < tam-1; i++)
+    {
+        if(array[i] > array[i+1])
+        {
+            return 0;
+        }
+    }
+
+    return 1;
+}
 
 
 int main() {
+    int array[] = {2, 3, 1, 6, 4};
+
     printf("START\n\n");
 
     printf("soma dos espacos em branco: %d \n", contaEspacosEmBranco("hello world"));
     printf("ultima posicao de l (0 - nao existe): %d \n", devolveUltimaPosicao("hello world", 'h'));
+    printf("array esta ordenado? %d \n", ordenado(array, 5));
 
     printf("\nEND\n\n");
     return 0;
