@@ -11,9 +11,9 @@ int contaEspacosEmBranco(char *s)
 
     for(int i=0; s[i] != '\0'; i++) //percorrer o array
     {
-        if(s[i] == ' ') //espaco em branco
+        if(s[i] == ' ') //encontrou espaco em branco
         {
-            sum++;
+            sum++; //conta
         }
     }
 
@@ -31,11 +31,11 @@ int devolveUltimaPosicao(char *s, char c)
 {
     int lastPos=0;
 
-    for(int i=0; s[i] != '\0'; i++)
+    for(int i=0; s[i] != '\0'; i++) //percorrer o array
     {
-        if(s[i] == c)
+        if(s[i] == c) //encontrou letra
         {
-            lastPos = i+1;
+            lastPos = i+1; //guarda a posicao
         }
     }
 
@@ -49,7 +49,7 @@ int main() {
     printf("START\n\n");
 
     printf("soma dos espacos em branco: %d \n", contaEspacosEmBranco("hello world"));
-    printf("ultima posicao de l (0 - nao existe): %d \n", devolveUltimaPosicao("hello world", 'l'));
+    printf("ultima posicao de l (0 - nao existe): %d \n", devolveUltimaPosicao("hello world", 'h'));
 
     printf("\nEND\n\n");
     return 0;
