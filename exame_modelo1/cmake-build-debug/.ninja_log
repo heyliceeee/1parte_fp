@@ -1,3 +1,9 @@
 # ninja log v5
 0	82	7301561905108389	CMakeFiles/exame_modelo1.dir/main.c.obj	6e1c9e3a866a23cf
 83	226	7301561906518428	exame_modelo1.exe	7ecab1c73e9f2bdf
+1	607	7302102023757933	CMakeFiles/exame_modelo1.dir/main.c.obj	6e1c9e3a866a23cf
+607	1255	7302102030207921	exame_modelo1.exe	7ecab1c73e9f2bdf
+1	51	7302103311477112	CMakeFiles/exame_modelo1.dir/main.c.obj	6e1c9e3a866a23cf
+51	111	7302103312057100	exame_modelo1.exe	7ecab1c73e9f2bdf
+2	51	7302103478707149	CMakeFiles/exame_modelo1.dir/main.c.obj	6e1c9e3a866a23cf
+51	110	7302103479277116	exame_modelo1.exe	7ecab1c73e9f2bdf
