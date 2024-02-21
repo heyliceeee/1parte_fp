@@ -157,6 +157,30 @@ void altera(int imagemEx2[MAX_IMAGEM_EX2][MAX_IMAGEM_EX2], float valorPercentual
 }
 
 
+int ltrim(char *s)
+{
+    int numEspacosRemovidos=0;
+
+    for(; s[numEspacosRemovidos] == ' '; ) //conta espacos iniciais
+    {
+        ++numEspacosRemovidos;
+    }
+
+    //se houver espacos, move os caracteres para a esquerda
+    if(numEspacosRemovidos > 0)
+    {
+        int i=0;
+        for(; s[i+numEspacosRemovidos] != '\0'; i++)
+        {
+            s[i] = s[i+numEspacosRemovidos];
+        }
+
+        s[i] = '\0';
+    }
+
+    return numEspacosRemovidos;
+}
+
 
 
 int main()
@@ -217,6 +241,7 @@ int main()
     };
 
     float valorPercentual = 2.0;
+    char s[] = "   programar";
     //#endregion
 
 
@@ -231,9 +256,11 @@ int main()
     inverte(imagemEx2);
     printf("\n");
 
-
     altera(imagemEx2, valorPercentual);
     printf("\n");
+
+    printf("num de espacos removidos: %d\n", ltrim(s));
+    printf("String ajustada: '%s'\n", s);
 
 
     printf("\n\nEND\n");

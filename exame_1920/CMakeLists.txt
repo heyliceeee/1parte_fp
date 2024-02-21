@@ -3,4 +3,5 @@ project(exame_1920 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(exame_1920 main.c)
+add_executable(exame_1920 main.c
+)
