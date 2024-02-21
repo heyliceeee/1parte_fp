@@ -69,6 +69,36 @@ int verificaSimetria(int cidades[NUM_CIDADES][NUM_CIDADES])
 }
 
 
+
+/**
+ * verifica se no trajeto tem cidades validas e se nao tem cidades repetidas
+ * @param trajeto
+ * @return 1 se o trajeto tem cidades validas e se nao tem cidades repetidas, caso contrario 0
+ */
+int validaTrajeto(int trajeto[TAM_TRAJETO])
+{
+    for(int i=0; i < TAM_TRAJETO; i++)
+    {
+        if(trajeto[i] < 0 || trajeto[i] >= NUM_CIDADES) //cidade invalida
+        {
+            return 0;
+        }
+    }
+
+
+    for(int i=0; i < TAM_TRAJETO-1; i++)
+    {
+        if(trajeto[i] == trajeto[i+1])//trajeto invalido
+        {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+
+
 int main()
 {
     int cidades[NUM_CIDADES][NUM_CIDADES] = {
@@ -93,7 +123,10 @@ int main()
     printf("conexao entre cidade %d e cidade %d: %d\n\n", cidade1, cidade2, conexao);
 
 
-    printf("simetria: %d\n", verificaSimetria(cidades));
+    printf("simetria: %d\n\n", verificaSimetria(cidades));
+
+
+    printf("trajeto valido: %d\n\n", validaTrajeto(trajeto));
 
 
     printf("\nEND\n\n");
