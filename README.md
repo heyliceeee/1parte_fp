@@ -8,7 +8,7 @@
 ### Exames
 Exame |
 --- |
-[2023/2024](https://github.com/heyliceeee/1parte_fp/tree/main/exame_2324)
+[2023/2024](https://github.com/heyliceeee/1parte_fp/tree/main/exame_2324) |
 [Modelo1](https://github.com/heyliceeee/1parte_fp/tree/main/exame_modelo1) |  
-2019/2020 | 
-2019/2020 Exercícios | 
+[2019/2020](https://github.com/heyliceeee/1parte_fp/tree/main/exame_1920) | 
+[2019/2020 Exercícios](https://github.com/heyliceeee/1parte_fp/tree/main/exercicios_1920) | 
