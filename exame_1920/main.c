@@ -94,6 +94,71 @@ void inverte(int imagemEx2[MAX_IMAGEM_EX2][MAX_IMAGEM_EX2])
 }
 
 
+/**
+ * altera a intensidade da cor da imagem
+ * @param imagemEx2
+ * @param valorPercentual positivo (aumentar intensidade) ou negativo (reduzir intensidade)
+ */
+void altera(int imagemEx2[MAX_IMAGEM_EX2][MAX_IMAGEM_EX2], float valorPercentual)
+{
+    //valor da intensidade
+    do
+    {
+        printf("introduza um valor: (-1.0 - 1.0) ");
+        scanf("%f", &valorPercentual);
+    } while (valorPercentual < -1.0 || valorPercentual > 1.0);
+
+
+    printf("ANTES: \n");
+
+    for(int i=0; i < MAX_IMAGEM_EX2; i++) //percorrer linhas
+    {
+        for(int j=0; j < MAX_IMAGEM_EX2; j++) //percorrer colunas
+        {
+            printf("%d ", imagemEx2[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nDEPOIS: \n");
+
+    for(int i=0; i < MAX_IMAGEM_EX2; i++) //percorrer linhas
+    {
+        for(int j=0; j < MAX_IMAGEM_EX2; j++) //percorrer colunas
+        {
+            int novoValor;
+
+            if(valorPercentual == 1.0)
+            {
+                novoValor = 255;
+            }
+            else if(valorPercentual == -1.0)
+            {
+                novoValor = 0;
+            }
+            else
+            {
+                novoValor = imagemEx2[i][j] + (int)(255*valorPercentual);
+            }
+
+            if(novoValor < 0)
+            {
+                novoValor = 0;
+            }
+            else if(novoValor > 255)
+            {
+                novoValor = 255;
+            }
+
+            printf("%d ", novoValor);
+        }
+        printf("\n");
+    }
+}
+
+
+
+
 int main()
 {
     //#region VARIAVEIS
@@ -150,6 +215,8 @@ int main()
             {238, 17, 221, 68, 119, 255},
             {85, 170, 119, 221, 17, 136},
     };
+
+    float valorPercentual = 2.0;
     //#endregion
 
 
@@ -162,6 +229,10 @@ int main()
     printf("\n");
 
     inverte(imagemEx2);
+    printf("\n");
+
+
+    altera(imagemEx2, valorPercentual);
     printf("\n");
 
 
