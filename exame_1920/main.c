@@ -2,6 +2,7 @@
 
 #define MAX_IMAGEM 35
 #define MAX_PARTE 5
+#define MAX_IMAGEM_EX2 6
 
 
 /**
@@ -48,10 +49,37 @@ int existe(int imagem[MAX_IMAGEM][MAX_IMAGEM], int parte[MAX_PARTE][MAX_PARTE])
 }
 
 
+/**
+ * mostra para cada cor, a quatidade de pixeis que têm essa cor
+ * @param imagemEx2
+ */
+void conta_cores(int imagemEx2[MAX_IMAGEM_EX2][MAX_IMAGEM_EX2])
+{
+    int quantidadeCores[256] = {0}, existe=0;
+
+    for(int i=0; i < MAX_IMAGEM_EX2; i++) //percorrer linhas
+    {
+        for(int j=0; j < MAX_IMAGEM_EX2; j++) //percorrer colunas
+        {
+            quantidadeCores[imagemEx2[i][j]]++;
+        }
+    }
+
+
+    //mostrar matriz quantidadeCores
+    for (int i = 0; i < 256; i++)
+    {
+        if (quantidadeCores[i] > 0)
+        {
+            printf("Cor %d: %d pixel(s)\n", i, quantidadeCores[i]);
+        }
+    }
+}
 
 
 int main()
 {
+    //#region VARIAVEIS
     int imagem[MAX_IMAGEM][MAX_IMAGEM] = {
             {1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1},
             {1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1},
@@ -97,12 +125,21 @@ int main()
             {1, 1, 1, 1, 1},
     };
 
-
+    int imagemEx2[MAX_IMAGEM_EX2][MAX_IMAGEM_EX2] = {
+            {170, 238, 85, 255, 221, 0},
+            {68, 136, 17, 170, 119, 68},
+            {221, 0, 238, 136, 0, 255},
+            {119, 255, 85, 170, 136, 238},
+            {238, 17, 221, 68, 119, 255},
+            {85, 170, 119, 221, 17, 136},
+    };
+    //#endregion
 
 
     printf("START\n\n");
 
-    printf("existe: %s", existe(imagem, parte) == 0 ? "nao" : "sim");
+    printf("existe: %s", existe(imagem, parte) == 0 ? "nao\n" : "sim\n");
+    conta_cores(imagemEx2);
 
     printf("\n\nEND\n");
     return 0;
