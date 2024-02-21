@@ -38,7 +38,7 @@ int obtemConexaoEntreCidades(int cidade1, int cidade2)
 
     do
     {
-        printf("existe ligacao entre a cidade %d e a cidade %d ? (0 - nao | 1 - sim): \n", cidade1, cidade2);
+        printf("existe ligacao entre a cidade %d e a cidade %d ? (0 - nao | 1 - sim):  ", cidade1, cidade2);
         scanf("%d", &valor);
 
     } while (valor != 0 && valor != 1);
@@ -46,6 +46,27 @@ int obtemConexaoEntreCidades(int cidade1, int cidade2)
     return valor;
 }
 
+
+/**
+ * verifica se a matriz e simetrica
+ * @param cidades
+ * @return 1 se for, caso contrario 0
+ */
+int verificaSimetria(int cidades[NUM_CIDADES][NUM_CIDADES])
+{
+    for(int i=0; i < NUM_CIDADES; i++) //percorrer linhas
+    {
+        for(int j=0; j < NUM_CIDADES; j++) //percorrer colunas
+        {
+            if(cidades[i][j] != cidades[j][i])
+            {
+                return 0;
+            }
+        }
+    }
+
+    return 1;
+}
 
 
 int main()
@@ -65,11 +86,14 @@ int main()
     printf("START\n");
 
 
-    printf("trajeto possivel: %d\n", verificaTrajeto(trajeto, cidades));
+    printf("trajeto possivel: %d\n\n", verificaTrajeto(trajeto, cidades));
 
 
     int conexao = obtemConexaoEntreCidades(cidade1, cidade2);
-    printf("conexao entre cidade %d e cidade %d: %d\n", cidade1, cidade2, conexao);
+    printf("conexao entre cidade %d e cidade %d: %d\n\n", cidade1, cidade2, conexao);
+
+
+    printf("simetria: %d\n", verificaSimetria(cidades));
 
 
     printf("\nEND\n\n");
