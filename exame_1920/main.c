@@ -77,6 +77,23 @@ void conta_cores(int imagemEx2[MAX_IMAGEM_EX2][MAX_IMAGEM_EX2])
 }
 
 
+/**
+ * inverte a matriz
+ * @param imagemEx2
+ */
+void inverte(int imagemEx2[MAX_IMAGEM_EX2][MAX_IMAGEM_EX2])
+{
+    for(int i=0; i < MAX_IMAGEM_EX2; i++) //percorrer linhas
+    {
+        for(int j=0; j < MAX_IMAGEM_EX2; j++) //percorrer colunas
+        {
+            printf("%d ", 255 - imagemEx2[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+
 int main()
 {
     //#region VARIAVEIS
@@ -138,8 +155,15 @@ int main()
 
     printf("START\n\n");
 
-    printf("existe: %s", existe(imagem, parte) == 0 ? "nao\n" : "sim\n");
+
+    printf("existe: %s", existe(imagem, parte) == 0 ? "nao\n\n" : "sim\n\n");
+
     conta_cores(imagemEx2);
+    printf("\n");
+
+    inverte(imagemEx2);
+    printf("\n");
+
 
     printf("\n\nEND\n");
     return 0;
